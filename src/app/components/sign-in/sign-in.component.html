@@ -1,0 +1,35 @@
+<!-- 
+
+<h1>Sign In</h1>
+<form [formGroup]="signInForm" (ngSubmit)="signIn(signInForm)">
+    <label for="email">Email</label>
+    <input type="email" name="email" formControlName="email">
+    <label for="password">Password</label>
+    <input type="password" name="password" formControlName="password">
+    <button>Sign In</button>
+</form>
+<h4 *ngIf="signInFailed" style="color: #f00;">Sign in failed. Please try again.</h4>
+<hr> -->
+
+
+<div class="login">
+    <div class="login-triangle"></div>
+    
+    <h2 class="login-header"> CONNECTION</h2>
+  
+    <form  [formGroup]="signInForm" (ngSubmit)="signIn(signInForm)" class="login-container">
+      <p><input  name="email" formControlName="email" type="email" placeholder="Email"></p>
+      <p><input type="password" formControlName="password" placeholder="Password"></p>
+
+    <button style="  background: #28d;
+    border-color: transparent;
+    color: #fff;
+    cursor: pointer;" type="submit">SE CONNECTER</button>
+    <a href="/signup"  style="color: rgb(52, 71, 180);"> S'inscrire ici.</a>
+
+    </form>
+
+  </div>
+
+  <h4 *ngIf="signInFailed" style="color: #f00;">Sign in failed. Please try again.</h4>
+<hr>

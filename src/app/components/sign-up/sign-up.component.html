@@ -1,0 +1,31 @@
+
+
+
+<div class="login">
+    <div class="login-triangle"></div>
+
+    <h2 class="login-header"> Inscription</h2>
+
+    <form [formGroup]="signUpForm" (ngSubmit)="signUp(signUpForm)" class="login-container">
+        <p><input name="email" formControlName="email" type="email" placeholder="Email"></p>
+        <p><input name="password" type="password"  formControlName="password" placeholder="Mot de passe"></p>
+
+        <p><input name="confirm_password" type="Mot de passe confirmation" placeholder="Password"></p>
+
+    
+        <button style="  background: #28d;
+    border-color: transparent;
+    color: #fff;
+    cursor: pointer;" type="submit">S'inscrire</button>
+        <a href="/signin" style="color: rgb(52, 71, 180);"> Se connecter ici.</a>
+
+    </form>
+
+</div>
+
+<h4 *ngIf="signUpFailed" style="color: #f00;">Sign in failed. Please try again.</h4>
+<hr> 
+<div *ngIf="f.confirm_password.touched && f.confirm_password.invalid" class="alert alert-danger">
+    <div *ngIf="f.confirm_password.errors.required">Password is required.</div>
+    <div *ngIf="f.confirm_password.errors.confirmedValidator">Password and Confirm Password must be match.</div>
+</div>

@@ -1,0 +1,76 @@
+<div *ngIf="currentTutorial" class="edit-form">
+  <h4>Details</h4>
+  <form>
+    <div class="form-group">
+      <label for="title">Materiel defaillant</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        [(ngModel)]="currentTutorial.nom"
+        name="title"
+        disabled
+        style="margin-bottom:40px ;"
+      />
+    </div>
+    <div class="form-group">
+      <label for="description">Salle de classe</label>
+      <input
+        type="text"
+        class="form-control"
+        id="salle"
+        [(ngModel)]="currentTutorial.salle"
+        name="salle"
+        disabled
+        style="margin-bottom:40px ;"
+      />
+    </div>
+    <div class="form-group">
+      <label for="description">Description du problème</label>
+      <input
+        type="text"
+        class="form-control"
+        id="description"
+        [(ngModel)]="currentTutorial.description"
+        name="description"
+        disabled
+        style="margin-bottom:40px ;"
+      />
+    </div>
+
+    <div style="margin-bottom:40px ;" class="form-group">
+      <label><strong>Status:</strong></label>
+      {{ currentTutorial.published ? "Resolu" : "Pas encore resolu" }}
+    </div>
+  </form>
+
+  <!-- <button
+  style="margin-bottom:40px ;"
+    class="badge badge-primary mr-2"
+    *ngIf="currentTutorial.reparer"
+    (click)="updatePublished(false)"
+  >
+    UnPublish
+  </button> -->
+  <button
+    *ngIf="!currentTutorial.published"
+    class="btn btn-primary" 
+       (click)="updatePublished(true)"
+  >
+    Intervenir
+  </button>
+
+  <button class="btn btn-danger" (click)="deleteTutorial()">
+    Delete
+  </button>
+
+  <!-- <button type="submit" class="badge badge-success" (click)="updateTutorial()">
+    Update
+  </button> -->
+  <p>{{ message }}</p>
+</div>
+
+<div *ngIf="!currentTutorial">
+  <br />
+  <p>Ne peux pas accéder...</p>
+</div>
