@@ -2,8 +2,8 @@
   "name": "SDI",
   "version": "0.0.0",
   "scripts": {
-    "build:prod": "ng build --prod",
-    "heroku-postbuild": "npm run build:prod",
+    "build": "ng build",
+    "heroku-postbuild": "npm run build",
     "ng": "ng",
     "start": "node server.js",
     "preinstall": "npm i -g http-server && npm i -g @angular/cli",
