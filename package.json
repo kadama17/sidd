@@ -13,8 +13,8 @@
     "build:windows": "electron-packager ./electron IonicApp --overwrite --asar=true --platform=win32 --arch=ia32 --prune=true --out=release-builds"
   },
   "engines": {
-    "node": "16.15.0",
-    "npm": "8.12.1"
+    "node": "16.x",
+    "npm": "8.5.5"
   },
   "private": true,
   "dependencies": {
